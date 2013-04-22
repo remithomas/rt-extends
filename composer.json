@@ -1,0 +1,30 @@
+{
+    "name": "remithomas/rt-extends",
+    "description": "ZF2 useful tools",
+    "type": "library",
+    "keywords": [
+        "zf2","insert","duplicate","date","validator"
+    ],
+    "homepage": "https://github.com/remithomas/rt-extends",
+    "authors": [
+        {
+            "name": "Remi THOMAS",
+            "email": "remi.thomas@yahoo.fr",
+            "homepage": "http://remithomas.fr/"
+        }
+    ],
+    "version": "0.1",
+    "require": {
+        "php": ">=5.3.3",
+        "umpirsky/country-list": "dev-master",
+        "zendframework/zendframework": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "RtExtends": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
