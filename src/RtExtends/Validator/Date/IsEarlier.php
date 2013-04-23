@@ -5,10 +5,10 @@ namespace RtExtends\Validator\Date;
 use Zend\Validator\Date as ZendDate;
 use DateTime;
 
-class IsLater extends ZendDate
+class IsEarlier extends ZendDate
 {
   
-    const DATE_NOT_LATER   = 'dateNotLater';
+    const DATE_NOT_EARLIER   = 'dateNotEarlier';
     
     /**
      *
@@ -18,7 +18,7 @@ class IsLater extends ZendDate
         self::INVALID        => "Invalid type given. String, integer, array or DateTime expected",
         self::INVALID_DATE   => "The input does not appear to be a valid date",
         self::FALSEFORMAT    => "The input does not fit the date format '%format%'",
-        self::DATE_NOT_LATER  => "The date is not later than '%min%'",
+        self::DATE_NOT_EARLIER  => "The date is not earlier than '%max%'",
     );
     
     /**
@@ -26,14 +26,14 @@ class IsLater extends ZendDate
      */
     protected $messageVariables = array(
         'format'  => 'format',
-        'min'     => 'min'
+        'max'     => 'max'
     );
     
     /**
      *
      * @var string 
      */
-    protected $min;
+    protected $max;
 
 
     /**
@@ -45,8 +45,8 @@ class IsLater extends ZendDate
     {
         parent::__construct($options);
         
-        if (array_key_exists('min', $options)) {
-            $this->setMin($options['min']);
+        if (array_key_exists('max', $options)) {
+            $this->setMax($options['max']);
         }
     }
     
@@ -54,17 +54,17 @@ class IsLater extends ZendDate
      *
      * @return string|null 
      */
-    public function getMin(){
-        return $this->min;
+    public function getMax(){
+        return $this->max;
     }
     
     /**
      *
-     * @param type $min
-     * @return \RtExtends\Validator\Date\IsLater 
+     * @param type $max
+     * @return \RtExtends\Validator\Date\IsEarlier
      */
-    public function setMin($min = null){
-        $this->min = $min;
+    public function setMax($max = null){
+        $this->max = $max;
         return $this;
     }
     
@@ -83,13 +83,13 @@ class IsLater extends ZendDate
         }
         
         // test if is later
-        $dateA = DateTime::createFromFormat($this->format, $this->min);
+        $dateA = DateTime::createFromFormat($this->format, $this->max);
         $dateB = DateTime::createFromFormat($this->format, $this->value);
         
-        if($dateA < $dateB){
+        if($dateA > $dateB){
             return true;
         }else{
-            $this->error(self::DATE_NOT_LATER);
+            $this->error(self::DATE_NOT_EARLIER);
             return false;
         }
     }

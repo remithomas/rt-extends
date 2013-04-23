@@ -1,7 +1,8 @@
 rt-extends
 ==========
 
-A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update) 
+A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update)
+ 
 ---------------------------------------
 # Features / Goals
 
