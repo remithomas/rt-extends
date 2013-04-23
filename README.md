@@ -7,7 +7,7 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 # Features / Goals
 
 
-* **Sql** : Db\Sql\Insert ON DUPLICATE KEY UPDATE option
+* **Sql** : Db\Sql\DuplicateInsert ON DUPLICATE KEY UPDATE option
 * **Validators** : Date is later, is Earlier
 * **Useful**
     * **Countries** : List of countries
@@ -60,7 +60,7 @@ return array(
 
 # Examples
 ---------------------------------------
-## Db\Sql\Insert
+## Db\Sql\DuplicateInsert
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $value = array(
     'value' => 'myvalue'
 );
             
-$DuplicateInsert = new RtExtends\Db\Sql\Insert("user");
+$DuplicateInsert = new RtExtends\Db\Sql\DuplicateInsert("user");
 $DuplicateInsert->values($value);
 
 $statment = $this->dbAdapter->createStatement(); 

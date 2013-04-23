@@ -10,7 +10,7 @@ use Zend\Db\Adapter\Platform\Sql92;
 
 use Zend\Db\Sql\Insert as ZendInsert;
 
-class Insert extends ZendInsert{
+class DuplicateInsert extends ZendInsert{
     
     /**
      * Constants 
