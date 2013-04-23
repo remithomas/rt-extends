@@ -1,10 +1,10 @@
 rt-extends
 ==========
 
-zf2 useful tools
+A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update) 
+---------------------------------------
+# Features / Goals
 
-Features / Goals
-============
 
 * **Sql** : Db\Sql\Insert ON DUPLICATE KEY UPDATE option
 * **Validators** : Date is later
@@ -12,16 +12,16 @@ Features / Goals
     * **Countries** : List of countries
     * **Languages** : continents list, languages list, Timezones list
 
-Requirements
-============
+# Requirements
+
 
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
 * [umpirsky/country-list](https://github.com/umpirsky/country-list) (latest master)
 
 # Installation
+---------------------------------------
+## How to install ?
 
-How to install ?
-================
 ### Using composer.json
 
 ```json
@@ -58,12 +58,11 @@ return array(
 ```
 
 # Examples
-
+---------------------------------------
 ## Db\Sql\Insert
 
 ```php
 <?php
-
 $value = array(
     'user_id' => 2,
     'value' => 'myvalue'
@@ -75,7 +74,6 @@ $DuplicateInsert->values($value);
 $statment = $this->dbAdapter->createStatement(); 
 $DuplicateInsert->prepareStatement($this->dbAdapter, $statment); 
 $statment->execute(); 
-
 ?>
 ```
 
@@ -88,13 +86,13 @@ VALUES (2, 'myvalue')
 ```
 
 
-Thanks
-======
+# Thanks
+---------------------------------------
 To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
 
 
-Todo
-====
+# Todo
+---------------------------------------
 * many other validators
 * some good helpers
 * devise
