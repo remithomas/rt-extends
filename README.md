@@ -86,6 +86,50 @@ VALUES (2, 'myvalue')
   ON DUPLICATE KEY UPDATE `user_id`=VALUES(`user_id`), `value`=VALUES(`value`);
 ```
 
+## Validator\Date\IsLater
+
+```php
+public function getInputFilterSpecification()
+{
+    return array(
+        'datestart' => array(
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => "RtExtends\Validator\Date\IsLater",
+                    'options' => array(
+                        'min' => date ("d F Y - H:i", mktime()),
+                        'format' => 'd F Y - H:i'
+                    )
+                )
+            ),
+        ),
+    );
+}
+```
+
+## Validator\Date\IsEarlier
+
+```php
+public function getInputFilterSpecification()
+{
+    return array(
+        'dateend' => array(
+            'required' => true,
+            'validators' => array(
+                array(
+                    'name' => "RtExtends\Validator\Date\IsEarlier",
+                    'options' => array(
+                        'max' => date ("d F Y - H:i", mktime()),
+                        'format' => 'd F Y - H:i'
+                    )
+                )
+            ),
+        ),
+    );
+}
+```
+
 
 # Thanks
 ---------------------------------------
