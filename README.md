@@ -8,8 +8,14 @@ Features / Goals
 
 * Sql : Db\Sql\Insert ON DUPLICATE KEY UPDATE option
 * Validators : Date is later
-* Countries : List of countries
-* Languages : continents list, languages list, Timezones list
+* Useful
+** Countries : List of countries
+** Languages : continents list, languages list, Timezones list
+
+Requirements
+============
+
+* 
 
 How to install ?
 ============
@@ -48,9 +54,13 @@ return array(
 ?>
 ```
 
+Thanks
+======
+
 
 
 Todo
 ======
 * many other validators
 * some good helpers
+* devise
