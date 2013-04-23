@@ -8,7 +8,7 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 
 
 * **Sql** : Db\Sql\Insert ON DUPLICATE KEY UPDATE option
-* **Validators** : Date is later
+* **Validators** : Date is later, is Earlier
 * **Useful**
     * **Countries** : List of countries
     * **Languages** : continents list, languages list, Timezones list
