@@ -150,7 +150,7 @@ RtExtends\Useful\File\Zip::createZip($files, 'myzipfile.zip', true);
 Unzip archive
 ```php
 <?php
-RtExtends\Useful\File\Zip::unzip('path/to/archive', 'path/destination'); 
+RtExtends\Useful\File\Zip::unzip('path/to/archive, 'path/destination'); 
 ?> 
 ```
 
