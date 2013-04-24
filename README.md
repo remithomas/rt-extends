@@ -12,12 +12,19 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 * **Useful**
     * **Countries** : List of countries
     * **Languages** : continents list, languages list, Timezones list
+    * **Data** : Fake data *Lorem Ipsum* generator
+    * **File** : create Zip Archive, unzip archive, get Favicon
+
+---------------------------------------
+# Ask for contributions
+Some ideas [to implement](https://github.com/remithomas/rt-extends/pulls) to this useful code ? Or ups [some errors appear](https://github.com/remithomas/rt-extends/issues) 
+
 
 # Requirements
 
-
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
 * [umpirsky/country-list](https://github.com/umpirsky/country-list) (latest master)
+* ZipArchive
 
 # Installation
 ---------------------------------------
@@ -130,6 +137,60 @@ public function getInputFilterSpecification()
 }
 ```
 
+## Useful\File\Zip
+Create zip file
+
+```php
+<?php
+$files=array('file1.jpg', 'file2.jpg', 'file3.gif');
+RtExtends\Useful\File\Zip::createZip($files, 'myzipfile.zip', true); 
+?> 
+```
+
+Unzip archive
+```php
+<?php
+RtExtends\Useful\File\Zip::unzip('path/to/archive, 'path/destination'); 
+?> 
+```
+
+## Useful\Data\Fake
+
+### Lorem Ipsum : Paragraph
+Generate paragraphs
+```php
+<?php 
+// simple use : generate only one paragraph (element p)
+echo \RtExtends\Useful\Data\Fake::getParagraphLoremIpsum(); 
+
+// generate 3 paragraphs (element <p>) with class 'lead'
+echo \RtExtends\Useful\Data\Fake::getParagraphLoremIpsum(3,"p",array("class"=>"lead")); 
+
+// generate 2 divs (element <div>) with class 'alert alert-info'
+echo \RtExtends\Useful\Data\Fake::getParagraphLoremIpsum(2,"div",array("class"=>"alert alert-info")); 
+?>
+```
+
+If you don't need to get a list of random paragraphs, just do like that
+```php
+echo \RtExtends\Useful\Data\Fake::getParagraphLoremIpsum(2,"div",array("class"=>"alert alert-info"),false); 
+?>
+```
+
+### Lorem Ipsum : Words
+```php
+// simple use : 10 words
+echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10);
+
+// include in tag (ex: <p class='lead>>)
+echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10,"p",array("class"=>"lead"),"!");
+
+// no random option
+echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10,"p",array("class"=>"lead"),"!", false);
+
+// no random option but a special line
+echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10,"p",array("class"=>"lead"),"!", 3);
+```
 
 # Thanks
 ---------------------------------------
@@ -139,5 +200,6 @@ To [Saša Stamenković](https://github.com/umpirsky) for [his great module](http
 # Todo
 ---------------------------------------
 * many other validators
+* Fake data (more tool)
 * some good helpers
-* devise
+* Currency
