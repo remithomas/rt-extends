@@ -3,7 +3,7 @@
     "description": "ZF2 useful tools",
     "type": "library",
     "keywords": [
-        "zf2","insert","duplicate","date","validator","snippets",'fake',"data"
+        "zf2","insert","duplicate","date","validator","snippets","fake","data"
     ],
     "homepage": "https://github.com/remithomas/rt-extends",
     "authors": [
