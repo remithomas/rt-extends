@@ -22,8 +22,14 @@ class ExtendedFlashMessenger extends AbstractHelper{
         $this->flashMessenger = $flashMessenger;
     }
     
-    
-    public function __invoke($includeCurrentMessages = false, $forceClearMessages = true)
+    /**
+     *
+     * @param type $includeCurrentMessages
+     * @param type $forceClearMessages
+     * @param type $attr
+     * @return type 
+     */
+    public function __invoke($includeCurrentMessages = false, $forceClearMessages = true, $attr = array())
     {
         // init : messages
         $messages = "";
@@ -37,13 +43,21 @@ class ExtendedFlashMessenger extends AbstractHelper{
         );
         
         foreach ($namespaces as $namespace){
-            $messages .= $this->renderNamespace($namespace, $includeCurrentMessages, $forceClearMessages);
+            $messages .= $this->renderNamespace($namespace, $includeCurrentMessages, $forceClearMessages, $attr);
         }  
         
         return $messages;
     }
     
-    public function renderNamespace($namespace, $includeCurrentMessages = false, $forceClearMessages = true){
+    /**
+     *
+     * @param type $namespace
+     * @param type $includeCurrentMessages
+     * @param type $forceClearMessages
+     * @param type $attr
+     * @return type 
+     */
+    public function renderNamespace($namespace, $includeCurrentMessages = false, $forceClearMessages = true, $attr = array()){
         
         // init : messages
         $messagesHTML = "";
@@ -56,7 +70,7 @@ class ExtendedFlashMessenger extends AbstractHelper{
         $messages = array_unique($messages);
         
         foreach ($messages as $message){
-            $messagesHTML .= $this->renderMessage($message, $namespace);
+            $messagesHTML .= $this->renderMessage($message, $namespace, $attr);
         }
         
         // clear messages
@@ -70,18 +84,34 @@ class ExtendedFlashMessenger extends AbstractHelper{
         return $messagesHTML;
     }
     
-    public function renderMessage($message, $namespace = null){
+    /**
+     *
+     * @param type $message
+     * @param type $namespace
+     * @param type $attr
+     * @return string 
+     */
+    public function renderMessage($message, $namespace = null, $attr = array()){
         
         // init : html
         $html = "";
         
         // container : message
-        $html .= "<div class='flashmessage-container alert alert-".$namespace."'>";
+        $class = array(
+            "flashmessage-container",
+            "alert",
+            "alert-".$namespace
+        );
+        if(array_key_exists("class", $attr)){
+            $class = array_merge($class, $attr['class']);
+        }
+                
+        $html .= sprintf("<div class='%s'>", implode(" ", $class));
             // title
             $html .= "<h4 class='flashmessage-container-title'>" . String::sprintfArray($this->view->translate($message->getTitle()), $message->getVartitle()) . "</h4>";
             // messages
             // container : messages
-            $html .= "<div class='flasmessage-container-messages-'>";
+            $html .= "<div class='flasmessage-container-messages'>";
                 if(is_array($message->getMessages())){
                     foreach ($message->getMessages() as $submessage){
                         if($submessage instanceof FlashMessageSub){
@@ -103,7 +133,7 @@ class ExtendedFlashMessenger extends AbstractHelper{
         $html = "";
        
         // container : messages
-        $html .= "<div class='flasmessage-container-submessage-'>";
+        $html .= "<div class='flasmessage-container-submessage'>";
         $html .= String::sprintfArray($this->view->translate($message), $variables);
         $html .= "</div>";
        
