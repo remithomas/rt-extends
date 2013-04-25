@@ -116,6 +116,32 @@ class Fake {
         return $lorem;
     }
     
+    /**
+     * @todo ... 
+     */
+    public static function fakeEmail(){
+        
+    }
+    
+    public static function fakeName(){
+        
+    }
+    
+    public static function fakeAddress(){
+        
+    }
+    
+    public static function fakeFirstName(){
+        
+    }
+    
+    public static function fakeArray(){
+        
+    }
+    
+    public static function fakeStdClass($model){
+        
+    }
 }
 
 ?>
