@@ -103,7 +103,12 @@ class ExtendedFlashMessenger extends AbstractHelper{
             "alert-".$namespace
         );
         if(array_key_exists("class", $attr)){
-            $class = array_merge($class, $attr['class']);
+            if(array_key_exists("removeclass", $attr) && $attr['removeclass'] == true){
+                $class = $attr['class'];
+            }else{
+                $class = array_merge($class, $attr['class']);
+            }
+            
         }
                 
         $html .= sprintf("<div class='%s'>", implode(" ", $class));
