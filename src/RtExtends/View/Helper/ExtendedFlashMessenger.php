@@ -78,7 +78,7 @@ class ExtendedFlashMessenger extends AbstractHelper{
         // container : message
         $html .= "<div class='flashmessage-container alert alert-".$namespace."'>";
             // title
-            $html .= "<h4 class='flashmessage-container-title'>" . $this->view->translate($message->getTitle()) . "</h4>";
+            $html .= "<h4 class='flashmessage-container-title'>" . String::sprintfArray($this->view->translate($message->getTitle()), $message->getVartitle()) . "</h4>";
             // messages
             // container : messages
             $html .= "<div class='flasmessage-container-messages-'>";

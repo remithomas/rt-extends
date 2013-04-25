@@ -19,6 +19,12 @@ class FlashMessage{
     protected $messages;
     
     /**
+     * Variable of title
+     * @var array 
+     */
+    protected $vartitle;
+
+    /**
      *
      * @param string $title
      * @return \RtExtends\Entity\FlashMessage 
@@ -57,6 +63,24 @@ class FlashMessage{
      */
     public function getMessages(){
         return $this->messages;
+    }
+    
+    /**
+     * Set variable to title
+     * @param array $variables
+     * @return \RtExtends\Entity\FlashMessage 
+     */
+    public function setVartitle(array $variables){
+        $this->vartitle = $variables;
+        return $this;
+    }
+    
+    /**
+     * Get variable of the title
+     * @return array 
+     */
+    public function getVartitle(){
+        return $this->vartitle;
     }
 }
 ?>
