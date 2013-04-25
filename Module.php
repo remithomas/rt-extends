@@ -47,4 +47,22 @@ class Module {
         return include __DIR__ . '/config/module.config.php';
     }
     
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                'extendedFlashMessenger' => function($sm) {
+                    $flashmessenger = $sm->getServiceLocator()
+                        ->get('ControllerPluginManager')
+                        ->get('flashmessenger');
+ 
+                    $messages = new \RtExtends\View\Helper\ExtendedFlashMessenger();
+                    $messages->setFlashMessenger($flashmessenger);
+ 
+                    return $messages;
+                }
+            ),
+        );
+    }
+    
 }

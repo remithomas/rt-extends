@@ -1,7 +1,7 @@
 rt-extends
 ==========
 
-A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update)
+A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger
  
 ---------------------------------------
 # Features / Goals
@@ -14,6 +14,8 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
     * **Languages** : continents list, languages list, Timezones list
     * **Data** : Fake data *Lorem Ipsum* generator
     * **File** : create Zip Archive, unzip archive, get Favicon
+    * **PHP** : [sprintf](http://php.net/manual/en/function.sprintf.php) with dynamic variables
+* **View\Helper** : extended Flash messenger (sub-message and messages are translated)
 
 ---------------------------------------
 # Ask for contributions
@@ -190,6 +192,57 @@ echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10,"p",array("class"=>"lead"
 
 // no random option but a special line
 echo \RtExtends\Useful\Data\Fake::getWordLoremIpsum(10,"p",array("class"=>"lead"),"!", 3);
+```
+
+## Useful\Php\String
+```php
+$data = array("this", "cool");
+echo RtExtends\Useful\Php\String::sprintfArray("%s is %s", $data);
+
+$data = array(
+    "otherway" => "Or",
+    "second" => "like that"
+);
+echo RtExtends\Useful\Php\String::sprintfArray("%(otherway)s maybe %(second)s !", $data);
+```
+
+## View\Helper\ExtendedFlashMessenger
+
+### In your layout
+```php
+echo $this->extendedFlashMessenger(true); // true is to get also current messages
+```
+
+### In your controller
+```php
+// Success !
+$flashMessage = new FlashMessage();
+$flashMessage->setTitle("bravo");
+$flashMessage->setMessages("Yes you did");
+
+$this->flashmessenger()->addSuccessMessage($flashMessage);
+```
+With variable
+```php
+    
+// Ups error ! (with sub messages
+$subMessage = new FlashMessageSub();
+$subMessage->setMessage("Ups %(name)s"); // first message
+$subMessage->setVariables(array(
+    'name' => "John Doe"
+));
+
+$subMessageSecond = new FlashMessageSub();
+$subMessageSecond->setMessage("Please  check here %(url)s"); // first message
+$subMessageSecond->setVariables(array(
+    'url' => "http://php.net"
+));
+
+$flashMessage = new FlashMessage();
+$flashMessage->setTitle("Sorry");
+$flashMessage->setMessages(array($subMessage,$subMessageSecond));
+                
+$this->flashmessenger()->addErrorMessage($flashMessage);
 ```
 
 # Thanks
