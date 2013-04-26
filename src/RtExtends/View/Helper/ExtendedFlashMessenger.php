@@ -104,9 +104,9 @@ class ExtendedFlashMessenger extends AbstractHelper{
         );
         if(array_key_exists("class", $attr)){
             if(array_key_exists("removeclass", $attr) && $attr['removeclass'] == true){
-                $class = $attr['class'];
+                $class = array($attr['class']);
             }else{
-                $class = array_merge($class, $attr['class']);
+                $class = array_merge($class, array($attr['class']));
             }
             
         }
