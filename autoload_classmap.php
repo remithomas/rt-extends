@@ -16,4 +16,5 @@ return array(
     'RtExtends\View\Helper\ExtendedFlashMessenger'  => __DIR__ . '/src/RtExtends/View/Helper/ExtendedFlashMessenger.php',
     'RtExtends\Entity\FlashMessage'                 => __DIR__ . '/src/RtExtends/Entity/FlashMessage.php',
     'RtExtends\Entity\FlashMessageSub'              => __DIR__ . '/src/RtExtends/Entity/FlashMessageSub.php',
+    'RtExtends\Snippets\Form\Element\Crsf'          => __DIR__ . '/src/RtExtends/Snippets/Form/Element/Crsf.php',
 );

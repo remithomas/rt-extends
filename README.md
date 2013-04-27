@@ -16,6 +16,7 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
     * **File** : create Zip Archive, unzip archive, get Favicon
     * **PHP** : [sprintf](http://php.net/manual/en/function.sprintf.php) with dynamic variables
 * **View\Helper** : extended Flash messenger (sub-message and messages are translated)
+* **Snippets** : create basic CSRF quickly
 
 ---------------------------------------
 # Ask for contributions
@@ -245,6 +246,13 @@ $flashMessage->setMessages(array($subMessage,$subMessageSecond));
 $this->flashmessenger()->addErrorMessage($flashMessage);
 ```
 
+## Snippets
+Some quick snippets
+### Snippets\Form\Element
+```php
+$form = new Form('my-form');
+$form->add(RtExtends\Snippets\Form\Element\Csrf::getCreateElementArray("crsf", 60*60*60));
+```
 # Thanks
 ---------------------------------------
 To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
