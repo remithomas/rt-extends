@@ -146,7 +146,14 @@ Create zip file
 ```php
 <?php
 $files=array('file1.jpg', 'file2.jpg', 'file3.gif');
-RtExtends\Useful\File\Zip::createZip($files, 'myzipfile.zip', true); 
+/**
+ *
+ * @param array $files
+ * @param string $destination
+ * @param bool $overwrite
+ * @return boolean 
+ */
+RtExtends\Useful\File\Zip::createZip($files, 'path/destination/myzipfile.zip', true); 
 ?> 
 ```
 
@@ -251,8 +258,36 @@ Some quick snippets
 ### Snippets\Form\Element
 ```php
 $form = new Form('my-form');
-$form->add(RtExtends\Snippets\Form\Element\Csrf::getCreateElementArray("crsf", 60*60*60));
+$form->add(\RtExtends\Snippets\Form\Element\Csrf::getCreateElementArray("crsf", 60*60*60));
+/* generate
+$form->add(array(
+    'type' => 'Zend\Form\Element\Csrf',
+    'name' => $name,
+    'options' => array(
+        'csrf_options' => array(
+            'timeout' => $timeout
+        )
+    )
+));*/
 ```
+
+### Snippets\Js
+Jquery
+```php
+<?php 
+echo \RtExtends\Snippets\Js\Jquery::getUrl(); 
+echo "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
+
+echo \RtExtends\Snippets\Js\Jquery::getUrl("2.0.0"); 
+echo "http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js";
+```
+Jquery UI
+```php
+echo \RtExtends\Snippets\Js\Jqueryui::getUrl(); 
+echo "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js";
+?>
+```
+
 # Thanks
 ---------------------------------------
 To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
