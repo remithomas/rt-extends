@@ -258,14 +258,14 @@ Some quick snippets
 ### Snippets\Form\Element
 ```php
 $form = new Form('my-form');
-$form->add(\RtExtends\Snippets\Form\Element\Csrf::getCreateElementArray("crsf", 60*60*60));
+$form->add(\RtExtends\Snippets\Form\Element\Csrf::getCreateElementArray("crsf", 60*60));
 /* generate
 $form->add(array(
     'type' => 'Zend\Form\Element\Csrf',
-    'name' => $name,
+    'name' => 'crsf',
     'options' => array(
         'csrf_options' => array(
-            'timeout' => $timeout
+            'timeout' => '3600'
         )
     )
 ));*/
@@ -280,9 +280,11 @@ echo "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
 
 echo \RtExtends\Snippets\Js\Jquery::getUrl("2.0.0"); 
 echo "http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js";
+?>
 ```
 Jquery UI
 ```php
+<?php 
 echo \RtExtends\Snippets\Js\Jqueryui::getUrl(); 
 echo "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js";
 ?>
