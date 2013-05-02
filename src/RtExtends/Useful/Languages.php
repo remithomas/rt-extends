@@ -562,5 +562,51 @@ class Languages{
         );
     }
     
+    /**
+     *
+     * @return array 
+     */
+    public static function getSimpleCodeLanguages(){
+        return array(
+            'bs'=>'Hrvatski',
+            'cs'=>'Čeština',
+            'da'=>'Dansk',
+            'de'=>'Deutsch',
+            'en'=>'English',
+            'es'=>'Español',
+            'et'=>'Eesti',
+            'fi'=>'Suomi',
+            'fr'=>'Français',
+            'hr'=>'Hrvatski',
+            'hu'=>'Magyar',
+            'id'=>'Bahasa Indonesia',
+            'is'=>'Íslenska',
+            'it'=>'Italiano',
+            'nl'=>'Nederlands',
+            'lt'=>'Lietuvių',
+            'lv'=>'Latviešu',
+            'nb'=>'Bokmål',
+            'pl'=>'Polski',
+            'pt'=>'Português',
+            'ro'=>'Română',
+            'sl'=>'Slovenščina',
+            'sk'=>'Slovenčina',
+            'sr_latn'=>'Srpski',
+            'sv'=>'Svenska',
+            'tr'=>'Türkçe',
+            'vi'=>'Tiếng việt',
+            'el'=>'Ελληνικά',
+            'ru'=>'Беларуская',
+            'bg'=>'Български',
+            'uk'=>'Українська',
+            'he'=>'ישראל - עברית',
+            'ar'=>'العراق - العربية',
+            'th'=>'ไทย',
+            'ko'=>'한국어',
+            'zh'=>'简体中文',
+            'ja'=>'日本語',
+        );
+    }
+    
 }
 ?>
