@@ -94,4 +94,3 @@ class IsEarlier extends ZendDate
         }
     }
 }
-?>

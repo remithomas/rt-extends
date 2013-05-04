@@ -145,5 +145,3 @@ class DuplicateInsert extends ZendInsert{
         return $columns."=VALUES(".$columns.")";
     }
 }
-
-?>

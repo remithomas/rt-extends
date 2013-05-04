@@ -145,4 +145,3 @@ class ExtendedFlashMessenger extends AbstractHelper{
         return $html;
     }
 }
-?>

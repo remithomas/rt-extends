@@ -83,4 +83,3 @@ class FlashMessage{
         return $this->vartitle;
     }
 }
-?>

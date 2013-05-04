@@ -39,4 +39,3 @@ class String{
         return call_user_func_array('sprintf', $values);
     }
 }
-?>

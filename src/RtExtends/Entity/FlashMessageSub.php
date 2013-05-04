@@ -52,4 +52,3 @@ class FlashMessageSub{
         return $this->variables;
     }
 }
-?>
