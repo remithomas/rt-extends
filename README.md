@@ -140,6 +140,18 @@ public function getInputFilterSpecification()
 }
 ```
 
+## Useful\Languages
+List of languages
+```php
+var_dump(RtExtends\Useful\Languages::getSimpleCodeLanguages());
+// array("fr"=>"Français","en"=>"English",'pt'=>'Português',....)
+```
+
+```php
+var_dump(RtExtends\Useful\Languages::getLanguages());
+// array('lv_LV'=>'Latvija - Latviešu','en_LB'=>'Lebanon - English','lt_LT'=>'Lietuva - Lietuvių','fr_LU'=>'Luxembourg - Français',,....)
+```
+
 ## Useful\File\Zip
 Create zip file
 
