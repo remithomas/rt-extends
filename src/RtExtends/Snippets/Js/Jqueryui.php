@@ -20,4 +20,25 @@ class Jqueryui{
             return $base . $versions[$version] . "/jquery-ui.min.js"; 
         }
     }
+    
+    /**
+     * Get url of the JqueryUI theme
+     * @param string $theme
+     * @param string $version
+     * @return string 
+     */
+    public static function getThemeUrl($theme = "base", $version = "1.10.1"){
+        $versions = array("1.10.1","1.9.2","1.7.2");
+        $themes = array("base","black-tie","blitzer","cupertino","dark-hive","dot-luv","eggplant","excite-bike","flick","hot-sneaks","humanity","le-frog","mint-choc","overcast","pepper-grinder","redmond","smoothness","south-street","start","sunny","swanky-purse","trontastic","ui-darkness","ui-lightness","vader");
+        
+        if(!isset($versions[$version])){
+            $version = "1.10.1";
+        }
+        
+        if(!isset($themes[$theme])){
+            $version = "base";
+        }
+        
+        return "http://ajax.googleapis.com/ajax/libs/jqueryui/".$version."/themes/".$theme."/jquery-ui.css";
+    }
 }
