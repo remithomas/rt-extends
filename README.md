@@ -1,8 +1,8 @@
-rt-extends
+rt-extends [![Build Status](https://travis-ci.org/remithomas/rt-extends.png?branch=master)](https://travis-ci.org/remithomas/rt-extends)
 ==========
 
 A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger
- 
+
 ---------------------------------------
 # Features / Goals
 
