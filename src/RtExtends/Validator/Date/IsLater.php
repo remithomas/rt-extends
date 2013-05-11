@@ -79,7 +79,7 @@ class IsLater extends ZendDate
         $parentTest = parent::isValid($value);
         
         if(!$parentTest){
-            $this->error(self::FALSEFORMAT);
+            $this->error(self::FALSEFORMAT); 
             return false;
         }
         

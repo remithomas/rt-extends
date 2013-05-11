@@ -24,7 +24,7 @@ class Jqueryui{
     /**
      * Get url of the JqueryUI theme
      * @param string $theme
-     * @param string $version
+     * @param string $version 
      * @return string 
      */
     public static function getThemeUrl($theme = "base", $version = "1.10.1"){
