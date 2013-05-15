@@ -13,7 +13,7 @@
             "homepage": "http://remithomas.fr/"
         }
     ],
-    "version": "0.1",
+    "version": "1.0.1",
     "require": {
         "php": ">=5.3.3",
         "umpirsky/country-list": "dev-master",
