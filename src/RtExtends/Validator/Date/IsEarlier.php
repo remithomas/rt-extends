@@ -18,7 +18,7 @@ class IsEarlier extends ZendDate
         self::INVALID        => "Invalid type given. String, integer, array or DateTime expected",
         self::INVALID_DATE   => "The input does not appear to be a valid date",
         self::FALSEFORMAT    => "The input does not fit the date format '%format%'",
-        self::DATE_NOT_EARLIER  => "The date is not earlier than '%max%'",
+        self::DATE_NOT_EARLIER  => "The date is not earlier than '%max%' %timezone%",
     );
     
     /**
@@ -26,7 +26,8 @@ class IsEarlier extends ZendDate
      */
     protected $messageVariables = array(
         'format'  => 'format',
-        'max'     => 'max'
+        'max'     => 'max',
+        'timezone'=> 'timezone'
     );
     
     /**
@@ -35,6 +36,11 @@ class IsEarlier extends ZendDate
      */
     protected $max;
 
+    /**
+     *
+     * @var string 
+     */
+    protected $timezone = "";
 
     /**
      * Sets validator options
@@ -47,6 +53,10 @@ class IsEarlier extends ZendDate
         
         if (array_key_exists('max', $options)) {
             $this->setMax($options['max']);
+        }
+        
+        if (array_key_exists('timezone', $options)) {
+            $this->setTimezone($options['timezone']);
         }
     }
     
@@ -70,6 +80,24 @@ class IsEarlier extends ZendDate
     
     /**
      *
+     * @param string $timezone
+     * @return \RtExtends\Validator\Date\IsLater 
+     */
+    public function setTimezone($timezone = null){
+        $this->timezone = $timezone;
+        return $this;
+    }
+    
+    /**
+     *
+     * @return timezone 
+     */
+    public function getTimezone(){
+        return $this->timezone;
+    }
+    
+    /**
+     *
      * @param  string|array|int|DateTime $value
      * @return bool
      */
@@ -84,8 +112,15 @@ class IsEarlier extends ZendDate
         }
         
         // test if is later
-        $dateA = DateTime::createFromFormat($this->format, $this->max);
-        $dateB = DateTime::createFromFormat($this->format, $this->value);
+        // timezone
+        if(!$this->timezone != ""){
+            $timezone = new \DateTimeZone($this->timezone);
+            $dateA = DateTime::createFromFormat($this->format, $this->max, $timezone);
+            $dateB = DateTime::createFromFormat($this->format, $this->value, $timezone);
+        }else{
+            $dateA = DateTime::createFromFormat($this->format, $this->max);
+            $dateB = DateTime::createFromFormat($this->format, $this->value);
+        }
         
         if($dateA > $dateB){
             return true;

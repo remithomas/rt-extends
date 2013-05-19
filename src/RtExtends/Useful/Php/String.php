@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * 
+ * @author Remi THOMAS
+ *  
+ */
+
 namespace RtExtends\Useful\Php;
 
 class String{
