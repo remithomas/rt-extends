@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @deprecated will be removed the next version
- */
-
-namespace RtExtends\Useful;
+namespace RtExtends\Useful\I18n;
 
 use DateTimeZone;
 

@@ -17,4 +17,9 @@ return array(
     'RtExtends\Entity\FlashMessage'                 => __DIR__ . '/src/RtExtends/Entity/FlashMessage.php',
     'RtExtends\Entity\FlashMessageSub'              => __DIR__ . '/src/RtExtends/Entity/FlashMessageSub.php',
     'RtExtends\Snippets\Form\Element\Crsf'          => __DIR__ . '/src/RtExtends/Snippets/Form/Element/Crsf.php',
+    'RtExtends\Useful\I18n\Languages'               => __DIR__ . '/src/RtExtends/Useful/I18n/Languages.php',
+    'RtExtends\Useful\Location\Countries'           => __DIR__ . '/src/RtExtends/Useful/Location/Countries.php',
+    'RtExtends\Useful\Location\Country\Fr'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/Fr.php',
+    'RtExtends\Useful\Location\Country\Us'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/Us.php',
+    'RtExtends\Useful\Location\Ziptastic'           => __DIR__ . '/src/RtExtends/Useful/Location/Ziptastic.php',
 );

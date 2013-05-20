@@ -1,7 +1,7 @@
 rt-extends [![Build Status](https://travis-ci.org/remithomas/rt-extends.png?branch=master)](https://travis-ci.org/remithomas/rt-extends)
 ==========
 
-A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger
+A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger, countries states
 
 ---------------------------------------
 # Features / Goals
@@ -10,8 +10,8 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 * **Sql** : Db\Sql\DuplicateInsert ON DUPLICATE KEY UPDATE option
 * **Validators** : Date is later, is Earlier
 * **Useful**
-    * **Countries** : List of countries
-    * **Languages** : continents list, languages list, Timezones list
+    * **Location** : List of countries, states list, zipcode search
+    * **I18n** : continents list, languages list, Timezones list
     * **Data** : Fake data *Lorem Ipsum* generator
     * **File** : create Zip Archive, unzip archive, get Favicon
     * **PHP** : [sprintf](http://php.net/manual/en/function.sprintf.php) with dynamic variables
@@ -109,7 +109,8 @@ public function getInputFilterSpecification()
                     'name' => "RtExtends\Validator\Date\IsLater",
                     'options' => array(
                         'min' => date ("d F Y - H:i", mktime()),
-                        'format' => 'd F Y - H:i'
+                        'format' => 'd F Y - H:i',
+                        'timezone' => 'Europe/London'
                     )
                 )
             ),
@@ -131,7 +132,8 @@ public function getInputFilterSpecification()
                     'name' => "RtExtends\Validator\Date\IsEarlier",
                     'options' => array(
                         'max' => date ("d F Y - H:i", mktime()),
-                        'format' => 'd F Y - H:i'
+                        'format' => 'd F Y - H:i',
+                        'timezone' => 'Europe/London'
                     )
                 )
             ),
@@ -140,16 +142,40 @@ public function getInputFilterSpecification()
 }
 ```
 
-## Useful\Languages
+## Useful\I18n\Languages
 List of languages
 ```php
-var_dump(RtExtends\Useful\Languages::getSimpleCodeLanguages());
+var_dump(RtExtends\Useful\I18n\Languages::getSimpleCodeLanguages());
 // array("fr"=>"Français","en"=>"English",'pt'=>'Português',....)
 ```
 
 ```php
-var_dump(RtExtends\Useful\Languages::getLanguages());
+var_dump(RtExtends\Useful\I18n\Languages::getLanguages());
 // array('lv_LV'=>'Latvija - Latviešu','en_LB'=>'Lebanon - English','lt_LT'=>'Lietuva - Lietuvių','fr_LU'=>'Luxembourg - Français',,....)
+```
+
+## Useful\Location
+List of countries (array returned)
+```php
+\RtExtends\Useful\Location\Countries::getCountries();
+```
+
+Zipcode
+```php
+\RtExtends\Useful\Location\Ziptastic::dataLocation("US", "33330");
+/*
+Return a stdClass object
+object(stdClass)#748 (3) {
+  ["city"] => string(15) "Fort Lauderdale"
+  ["state"] => string(7) "Florida"
+  ["country"] => string(2) "US"
+}
+*/
+```
+
+States of countries (US, FR are available)
+```php
+\RtExtends\Useful\Location\Country\Us::states();
 ```
 
 ## Useful\File\Zip
@@ -304,8 +330,8 @@ echo "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js";
 
 # Thanks
 ---------------------------------------
-To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
-
+* To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
+* To [Thomas Schultz](https://twitter.com/#!/daspecster) [for Ziptastic](http://daspecster.github.io/ziptastic/index.html) and don't foget to support this module!
 
 # Todo
 ---------------------------------------
@@ -313,3 +339,4 @@ To [Saša Stamenković](https://github.com/umpirsky) for [his great module](http
 * Fake data (more tool)
 * some good helpers
 * Currency
+* More countries
