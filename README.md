@@ -28,6 +28,7 @@ Some ideas [to implement](https://github.com/remithomas/rt-extends/pulls) to thi
 * [Zend Framework 2](https://github.com/zendframework/zf2) (latest master)
 * [umpirsky/country-list](https://github.com/umpirsky/country-list) (latest master)
 * ZipArchive
+* CURL extension
 
 # Installation
 ---------------------------------------

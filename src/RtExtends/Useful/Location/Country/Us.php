@@ -68,6 +68,11 @@ class Us{
         );
     }
     
+    
+    public static function statesFIPS(){
+        
+    }
+    
     public static function counties(){
         
     }
