@@ -177,6 +177,14 @@ object(stdClass)#748 (3) {
 States of countries (US, FR are available)
 ```php
 \RtExtends\Useful\Location\Country\Us::states();
+\RtExtends\Useful\Location\Country\Us::statesFIPS(); // FIPS codes
+\RtExtends\Useful\Location\Country\Fr::states();
+```
+
+Counties of countries (FR are available)
+```php
+\RtExtends\Useful\Location\Country\Fr::counties();
+\RtExtends\Useful\Location\Country\Fr::countiesStructured(); // by states
 ```
 
 ## Useful\File\Zip
@@ -332,7 +340,7 @@ echo "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js";
 # Thanks
 ---------------------------------------
 * To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
-* To [Thomas Schultz](https://twitter.com/#!/daspecster) [for Ziptastic](http://daspecster.github.io/ziptastic/index.html) and don't foget to support this module!
+* To [Thomas Schultz](https://twitter.com/#!/daspecster) for [Ziptastic](http://daspecster.github.io/ziptastic/index.html) and don't foget to support this module!
 
 # Todo
 ---------------------------------------
