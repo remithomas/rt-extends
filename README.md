@@ -1,7 +1,7 @@
 rt-extends [![Build Status](https://travis-ci.org/remithomas/rt-extends.png?branch=master)](https://travis-ci.org/remithomas/rt-extends)
 ==========
 
-A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger, countries states
+A list of ZF2 useful tools. To provide some utilities to generate list of languages, Sql query (on duplicate key update), flashmessenger, countries states and more
 
 ---------------------------------------
 # Features / Goals
@@ -181,10 +181,12 @@ States of countries (US, FR are available)
 \RtExtends\Useful\Location\Country\Fr::states();
 ```
 
-Counties of countries (FR are available)
+Counties of countries (US, FR are available)
 ```php
 \RtExtends\Useful\Location\Country\Fr::counties();
 \RtExtends\Useful\Location\Country\Fr::countiesStructured(); // by states
+\RtExtends\Useful\Location\Country\Us::counties();
+\RtExtends\Useful\Location\Country\Us::countiesStructured(); // by states
 ```
 
 ## Useful\File\Zip
