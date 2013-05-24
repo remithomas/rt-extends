@@ -13,6 +13,24 @@ namespace RtExtends\Useful\Data;
 class Fake {
     
     /**
+     * List of names
+     * @var array 
+     */
+    static $names = array("Thomas","Doe","Anderson","Burrier","Flinchbaugh","Figg","Martin","Barlett","Mcavoy","Willilams","Lemire","Hull","Whitcher","Shroyer","Fazenbaker","Mance","Jensen","Blanco","Circle","Magnin","Silvera","Chenault","Bartol","Woolley","Baranowski","Alles","Rooney","Daub","Connors","Sturdevant","Falkowski","Chisum","Hadley","Rench","Klima","Bradish","Otto","Menard","Renn","Limones","Greenstein","Fujimoto","Arnot","Blanc","Plumley","Couto","Merola","Enz","Pohl","Balls","Musson","Martel","Putman","Verrier","Dupont","Pineau","Winkel","Washington");
+    
+    /**
+     * List of male firstname
+     * @var array 
+     */
+    static $maleFirstName = array("Rémi","John","Greg","Jamel","Steve","Cesar","Antoine","Elijah","Abel","Horace","Manuel","Joachim","Toby","Mark","Steven","Jean","Cameron","Mitch","Terrance","Elmer","Lucas","Bernard","Warner","Dino","Dan","Alfonzo","Quentin","Denis","Morris","Rick","Raphael","Gus","Roland","Francisco","Barney","Albert","Ivan","Emile","Edgar","Travis","Maxwell","Alan","Alain","Spencer","Boris","Basil","Peter","Roger","Tomas","Phil","Gérald","Arthur","Max","Théo","Hichem","Claude","Bertrand","Marcel");
+    
+    /**
+     * List of female firstname
+     * @var array
+     */
+    static $femaleFirstName = array("Carmen","Patricia","Chin","Anne","Audrey","Kasha","Branda","Jonie","Trudy","Sabrina","Elane","Christine","Aurélie","Marie","Arie","Kathey","Léonie","Rolande","Frida","Marisa","Linda","Cornelia","Véronique","Jacqueline","Cristine","Birgit","Roslyn","Josefine","Lesli","Louisa","Melynda","Otelia","Bette","Lissette","Isabelle","Priscilla","Meredith","Aline","Melany","Letty","Carlotta","Laurette","Anneliese","Allyson","Janett","Lydia","Sandie","Stephaine","Michaele","Thi","Nakia","Sarah","Laura");
+    
+    /**
      *
      * @return array 
      */
@@ -76,7 +94,8 @@ class Fake {
     }
     
     /**
-     *
+     * Get some Lorem Ipsum words
+     * 
      * @param integer $words
      * @param string $tag
      * @param array $attrs
@@ -123,22 +142,128 @@ class Fake {
         
     }
     
-    public static function fakeName(){
+    /**
+     * Get a fake name
+     * 
+     * @param bool|integer $random
+     * @param array $names
+     * @return string 
+     */
+    public static function fakeName($random = true, $names = array()){
+        if(!is_array($names) || count($names)==0){
+            $names = self::$names;
+        }
         
+        if($random === true){
+            return $names[rand(0, count($names))];
+        }else{
+            return $names[$random];
+        }
     }
     
+    /**
+     * Get a fake firstname
+     * 
+     * @param bool|integer $random
+     * @param integer $sexe
+     * @param array $firstnames
+     * @return string 
+     */
+    public static function fakeFirstName($random = true, $sexe = 2, $firstnames = array()){
+        if(!is_array($firstnames) || count($firstnames)==0){
+            if($sexe === 2){
+                // female and male
+                $firstnames = array_merge(self::$femaleFirstName, self::$maleFirstName);
+            }else if($sexe === 1){
+                // only male
+                $firstnames = self::$maleFirstName;
+            }else if($sexe === 0){
+                // only female
+                $firstnames = self::$femaleFirstName;
+            }
+        }
+        
+        if($random === true){
+            return $firstnames[rand(0, count($firstnames))];
+        }else{
+            return $firstnames[$random];
+        }
+    }
+    
+    /**
+     *
+     * @param bool|integer $random
+     * @param bool|integer $randomFirstName
+     * @param integer $sexe
+     * @param array $names
+     * @param array $firstnames 
+     * @return string
+     */
+    public static function fakeCompleteName($random = true, $randomFirstName = true, $sexe = 2, $names = array(), $firstnames = array()){
+        if(!is_array($firstnames) || count($firstnames)==0){
+            if($sexe === 2){
+                // female and male
+                $firstnames = array_merge(self::$femaleFirstName, self::$maleFirstName);
+            }else if($sexe === 1){
+                // only male
+                $firstnames = self::$maleFirstName;
+            }else if($sexe === 0){
+                // only female
+                $firstnames = self::$femaleFirstName;
+            }
+        }
+        
+        if(!is_array($names) || count($names)==0){
+            $names = self::$names;
+        }
+        
+        if($random === true){
+            $name = $names[rand(0, count($names))];
+        }else{
+            $name = $names[$random];
+        }
+        
+        if($randomFirstName === true){
+            $firstname = $firstnames[rand(0, count($firstnames))];
+        }else{
+            $firstname = $firstnames[$randomFirstName];
+        }
+        
+        return $firstname . " " . $name;
+    }
+    
+    /**
+     * Get a list of complete names
+     * 
+     * @param integer $number
+     * @param integer $sexe
+     * @return array 
+     */
+    public static function fakeCompleteNameList($number = 10, $sexe = 2){
+        $list = array();
+        for($i=0 ; $i<$number ; $i++){
+            $list[] = self::fakeCompleteName(true, true, $sexe);
+        }
+        return $list;
+    }
+
+    /**
+     * @todo ... 
+     */
     public static function fakeAddress(){
         
     }
     
-    public static function fakeFirstName(){
-        
-    }
-    
+    /**
+     * @todo ... 
+     */
     public static function fakeArray(){
         
     }
     
+    /**
+     * @todo ... 
+     */
     public static function fakeStdClass($model){
         
     }
