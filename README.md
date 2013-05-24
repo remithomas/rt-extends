@@ -149,6 +149,11 @@ List of languages
 var_dump(RtExtends\Useful\I18n\Languages::getSimpleCodeLanguages());
 // array("fr"=>"Français","en"=>"English",'pt'=>'Português',....)
 ```
+List of timezones
+```php
+var_dump(RtExtends\Useful\I18n\Languages::getTimezones());
+var_dump(RtExtends\Useful\I18n\Languages::getTimezonesStructured());
+```
 
 ```php
 var_dump(RtExtends\Useful\I18n\Languages::getLanguages());
@@ -161,7 +166,7 @@ List of countries (array returned)
 \RtExtends\Useful\Location\Countries::getCountries();
 ```
 
-Zipcode
+Zipcode : Ziptatsic
 ```php
 \RtExtends\Useful\Location\Ziptastic::dataLocation("US", "33330");
 /*
