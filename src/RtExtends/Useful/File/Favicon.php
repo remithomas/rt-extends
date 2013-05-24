@@ -10,6 +10,9 @@
 
 namespace RtExtends\Useful\File;
 
+/**
+ * Favicon class 
+ */
 class Favicon{
     
     /**

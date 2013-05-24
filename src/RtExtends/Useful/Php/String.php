@@ -1,13 +1,16 @@
 <?php
 
 /**
- * 
+ * String tool
  * @author Remi THOMAS
  *  
  */
 
 namespace RtExtends\Useful\Php;
 
+/**
+ * String class 
+ */
 class String{
     
     /**

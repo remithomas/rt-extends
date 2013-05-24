@@ -18,16 +18,20 @@ namespace RtExtends\Useful\File;
 
 use ZipArchive;
 
+/**
+ * Zip class
+ */
 class Zip {
     
     /**
-     *
+     * Create ZIP file
+     * 
      * @param array $files
      * @param string|null $destination
      * @param bool $overwrite
      * @return boolean 
      */
-    public static function createZip($files = array(),$destination = '',$overwrite = false){
+    public static function createZip($files = array(), $destination = '',$overwrite = false){
         
         if(!is_array($files)){
             $files = array($files);
@@ -74,7 +78,7 @@ class Zip {
     }
     
     /**
-     *
+     * Unzip a file to a destination
      * @param string $file path to zip file 
      * @param string $destination destination directory for unzipped files 
      * @return boolean 

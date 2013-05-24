@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * Config file
+ * 
  * @author Remi THOMAS 
  */
 

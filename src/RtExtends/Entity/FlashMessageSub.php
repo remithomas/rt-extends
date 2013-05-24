@@ -1,7 +1,14 @@
 <?php
+/**
+ * Sub FlashMessage entity
+ * @author Remi THOMAS
+ */
 
 namespace RtExtends\Entity;
 
+/**
+ * FlashMessageSub class
+ */
 class FlashMessageSub{
     
     /**

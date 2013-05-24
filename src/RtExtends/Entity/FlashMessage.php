@@ -1,9 +1,16 @@
 <?php
+/**
+ * Flashmessage entity
+ * @author Remi THOMAS
+ */
 
 namespace RtExtends\Entity;
 
 use RtExtends\Entity\FlashMessageSub;
 
+/**
+ * Flashmessage class
+ */
 class FlashMessage{
     
     /**
@@ -25,7 +32,7 @@ class FlashMessage{
     protected $vartitle;
 
     /**
-     *
+     * Set a title to the flashmessage
      * @param string $title
      * @return \RtExtends\Entity\FlashMessage 
      */

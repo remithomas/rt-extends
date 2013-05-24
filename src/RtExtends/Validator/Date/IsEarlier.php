@@ -1,17 +1,24 @@
 <?php
+/**
+ * validator is earlier
+ * @author Remi THOMAS 
+ */
 
 namespace RtExtends\Validator\Date;
 
 use Zend\Validator\Date as ZendDate;
 use DateTime;
 
+/**
+ * IsEarlier class
+ */
 class IsEarlier extends ZendDate
 {
-  
+    
     const DATE_NOT_EARLIER   = 'dateNotEarlier';
     
     /**
-     *
+     * Message templates
      * @var array 
      */
     protected $messageTemplates = array(
@@ -22,6 +29,7 @@ class IsEarlier extends ZendDate
     );
     
     /**
+     * Message variables
      * @var array
      */
     protected $messageVariables = array(
@@ -31,13 +39,13 @@ class IsEarlier extends ZendDate
     );
     
     /**
-     *
+     * Max date
      * @var string 
      */
     protected $max;
 
     /**
-     *
+     * Timezone
      * @var string 
      */
     protected $timezone = "";
@@ -61,7 +69,7 @@ class IsEarlier extends ZendDate
     }
     
     /**
-     *
+     * Return max date
      * @return string|null 
      */
     public function getMax(){
@@ -69,8 +77,8 @@ class IsEarlier extends ZendDate
     }
     
     /**
-     *
-     * @param type $max
+     * Set max date
+     * @param string $max
      * @return \RtExtends\Validator\Date\IsEarlier
      */
     public function setMax($max = null){
@@ -79,7 +87,7 @@ class IsEarlier extends ZendDate
     }
     
     /**
-     *
+     * Set a timezone
      * @param string $timezone
      * @return \RtExtends\Validator\Date\IsLater 
      */
@@ -89,15 +97,15 @@ class IsEarlier extends ZendDate
     }
     
     /**
-     *
-     * @return timezone 
+     * Return timezone
+     * @return string 
      */
     public function getTimezone(){
         return $this->timezone;
     }
     
     /**
-     *
+     * Validate a value
      * @param  string|array|int|DateTime $value
      * @return bool
      */

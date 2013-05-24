@@ -1,8 +1,16 @@
 <?php
-// https://developers.google.com/speed/libraries/devguide
+/**
+ * Jqueryui snippet
+ * 
+ * @author Remi THOMAS
+ * @see https://developers.google.com/speed/libraries/devguide
+ */
 
 namespace RtExtends\Snippets\Js;
 
+/**
+ * Jqueryui class 
+ */
 class Jqueryui{
     
     /**

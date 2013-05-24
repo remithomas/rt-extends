@@ -1,6 +1,8 @@
 <?php
-
 /**
+ * Languages data
+ * 
+ * @author Remi THOMAS
  * @deprecated will be removed the next version
  */
 
@@ -8,8 +10,15 @@ namespace RtExtends\Useful;
 
 use DateTimeZone;
 
+/**
+ * Languages class
+ */
 class Languages{
     
+    /**
+     * List of regions
+     * @var array 
+     */
     static $regions = array(
         'Africa' => DateTimeZone::AFRICA,
         'America' => DateTimeZone::AMERICA,
@@ -23,7 +32,7 @@ class Languages{
     );
 
     /**
-     * Get continents
+     * Get regions
      * @return array 
      */
     public static function getContinents(){
@@ -31,7 +40,7 @@ class Languages{
     }
     
     /**
-     * 
+     * Get all timezones
      * @see http://stackoverflow.com/questions/1727077/generating-a-drop-down-list-of-timezones-with-php
      * @return array 
      */
@@ -567,7 +576,7 @@ class Languages{
     }
     
     /**
-     *
+     * Get simple code languages
      * @return array 
      */
     public static function getSimpleCodeLanguages(){

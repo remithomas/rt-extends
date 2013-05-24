@@ -1,4 +1,8 @@
 <?php
+/**
+ * Validator is later
+ * @author Remi THOMAS
+ */
 
 namespace RtExtends\Validator\Date;
 
@@ -6,13 +10,16 @@ use Zend\Validator\Date as ZendDate;
 use DateTime,
     DateTimeZone;
 
+/**
+ * IsLater class
+ */
 class IsLater extends ZendDate
 {
   
     const DATE_NOT_LATER   = 'dateNotLater';
     
     /**
-     *
+     * Message templates
      * @var array 
      */
     protected $messageTemplates = array(
@@ -23,6 +30,7 @@ class IsLater extends ZendDate
     );
     
     /**
+     * Message variables
      * @var array
      */
     protected $messageVariables = array(
@@ -32,13 +40,13 @@ class IsLater extends ZendDate
     );
     
     /**
-     *
+     * Min date
      * @var string 
      */
     protected $min;
 
     /**
-     *
+     * Timezone
      * @var string 
      */
     protected $timezone = "";
@@ -62,7 +70,7 @@ class IsLater extends ZendDate
     }
     
     /**
-     *
+     * Return min date
      * @return string|null 
      */
     public function getMin(){
@@ -70,8 +78,8 @@ class IsLater extends ZendDate
     }
     
     /**
-     *
-     * @param type $min
+     * Set min date
+     * @param string $min
      * @return \RtExtends\Validator\Date\IsLater 
      */
     public function setMin($min = null){
@@ -80,7 +88,7 @@ class IsLater extends ZendDate
     }
     
     /**
-     *
+     * Set timezone
      * @param string $timezone
      * @return \RtExtends\Validator\Date\IsLater 
      */
@@ -90,15 +98,15 @@ class IsLater extends ZendDate
     }
     
     /**
-     *
-     * @return timezone 
+     * Return tiezone
+     * @return string 
      */
     public function getTimezone(){
         return $this->timezone;
     }
     
     /**
-     *
+     * Valid a value
      * @param string|array|int|DateTime $value
      * @return bool
      */

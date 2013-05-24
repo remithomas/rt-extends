@@ -1,5 +1,7 @@
 <?php
 /**
+ * Autoload files
+ * 
  * @author Remi THOMAS 
  */
 return array(
@@ -21,5 +23,6 @@ return array(
     'RtExtends\Useful\Location\Countries'           => __DIR__ . '/src/RtExtends/Useful/Location/Countries.php',
     'RtExtends\Useful\Location\Country\Fr'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/Fr.php',
     'RtExtends\Useful\Location\Country\Us'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/Us.php',
+    'RtExtends\Useful\Location\Country\De'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/De.php',
     'RtExtends\Useful\Location\Ziptastic'           => __DIR__ . '/src/RtExtends/Useful/Location/Ziptastic.php',
 );

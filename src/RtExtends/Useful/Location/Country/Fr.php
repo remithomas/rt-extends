@@ -1,12 +1,15 @@
 <?php
 
 /**
- *
+ * France data
  * @author Remi THOMAS 
  */
 
 namespace RtExtends\Useful\Location\Country;
 
+/**
+ * Fr class 
+ */
 class Fr{
     
     /**
@@ -155,7 +158,7 @@ class Fr{
     }
     
     /**
-     * 
+     * Counties structured
      * @return array 
      */
     public static function countiesStructured(){

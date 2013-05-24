@@ -1,12 +1,19 @@
 <?php
-// https://developers.google.com/speed/libraries/devguide
+/**
+ * Jquery snippet
+ * @author Remi THOMAS
+ * @see https://developers.google.com/speed/libraries/devguide
+ */
 
 namespace RtExtends\Snippets\Js;
 
+/**
+ * Jquery class 
+ */
 class Jquery{
     
     /**
-     *
+     * Get Url of Jquery Lib
      * @param string $version
      * @return string 
      */

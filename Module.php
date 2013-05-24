@@ -1,6 +1,9 @@
 <?php
 
 /**
+ * Module file
+ * 
+ * Zend Framework 2 module file
  * 
  * @author Remi THOMAS
  * 
@@ -10,15 +13,10 @@ namespace RtExtends;
 
 use Zend\EventManager\Event;
 
+/**
+ * Module class
+ */
 class Module {
-    
-    /**
-     * onBootstrap
-     * @param MvcEvent $e
-     */
-    public function onBootstrap(Event $e){
-  
-    }
     
     /**
      * Return Autoloader configuration
@@ -47,6 +45,10 @@ class Module {
         return include __DIR__ . '/config/module.config.php';
     }
     
+    /**
+     * Return View helper config
+     * @return array 
+     */
     public function getViewHelperConfig()
     {
         return array(

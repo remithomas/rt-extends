@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Insert on duplicate class
+ * 
+ * @author Remi THOMAS
+ */
+
 namespace RtExtends\Db\Sql;
 
 use Zend\Db\Adapter\AdapterInterface;
@@ -10,6 +16,9 @@ use Zend\Db\Adapter\Platform\Sql92;
 
 use Zend\Db\Sql\Insert as ZendInsert;
 
+/**
+ * DuplicateInsert class
+ */
 class DuplicateInsert extends ZendInsert{
     
     /**
@@ -141,6 +150,11 @@ class DuplicateInsert extends ZendInsert{
         return sprintf($this->duplicatespecifications[self::SPECIFICATION_INSERTDUPLICATEKEY], $table, $columns, $values, $valuesDuplicate);
     }
     
+    /**
+     * Map action
+     * @param string $columns
+     * @return string 
+     */
     private function mapValue($columns){
         return $columns."=VALUES(".$columns.")";
     }

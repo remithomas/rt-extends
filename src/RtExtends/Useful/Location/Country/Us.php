@@ -1,12 +1,15 @@
 <?php
 
 /**
- *
+ * USA data
  * @author Remi THOMAS 
  */
 
 namespace RtExtends\Useful\Location\Country;
 
+/**
+ * Us class 
+ */
 class Us{
     
     /**

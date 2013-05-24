@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * ExtendedFlashMessenger helper class
+ * 
+ * I18n Flash messenger with submessages and variables
+ * 
+ * @author Remi THOMAS
+ */
 namespace RtExtends\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
@@ -9,25 +15,32 @@ use RtExtends\Entity\FlashMessage,
     RtExtends\Entity\FlashMessageSub,
     RtExtends\Useful\Php\String;
 
+/**
+ * ExtendedFlashMessenger helper class
+ */
 class ExtendedFlashMessenger extends AbstractHelper{
     
     /**
-     * @var FlashMessenger
+     * Flash messenger
+     * @var \Zend\Mvc\Controller\Plugin\FlashMessenger
      */
     protected $flashMessenger;
     
-    
+    /**
+     * Set flash messenger
+     * @param \Zend\Mvc\Controller\Plugin\FlashMessenger $flashMessenger
+     */
     public function setFlashMessenger(FlashMessenger $flashMessenger)
     {
         $this->flashMessenger = $flashMessenger;
     }
     
     /**
-     *
-     * @param type $includeCurrentMessages
-     * @param type $forceClearMessages
-     * @param type $attr
-     * @return type 
+     * Render
+     * @param bool $includeCurrentMessages
+     * @param bool $forceClearMessages
+     * @param array $attr
+     * @return string 
      */
     public function __invoke($includeCurrentMessages = false, $forceClearMessages = true, $attr = array())
     {
@@ -50,12 +63,12 @@ class ExtendedFlashMessenger extends AbstractHelper{
     }
     
     /**
-     *
-     * @param type $namespace
-     * @param type $includeCurrentMessages
-     * @param type $forceClearMessages
-     * @param type $attr
-     * @return type 
+     * Render a namespace
+     * @param string $namespace
+     * @param bool $includeCurrentMessages
+     * @param bool $forceClearMessages
+     * @param array $attr
+     * @return string 
      */
     public function renderNamespace($namespace, $includeCurrentMessages = false, $forceClearMessages = true, $attr = array()){
         
@@ -85,10 +98,10 @@ class ExtendedFlashMessenger extends AbstractHelper{
     }
     
     /**
-     *
-     * @param type $message
-     * @param type $namespace
-     * @param type $attr
+     * Render a message
+     * @param string $message
+     * @param string $namespace
+     * @param array $attr
      * @return string 
      */
     public function renderMessage($message, $namespace = null, $attr = array()){
@@ -133,6 +146,12 @@ class ExtendedFlashMessenger extends AbstractHelper{
         return $html;
     }
     
+    /**
+     * Render sub message
+     * @param string $message message to render
+     * @param array $variables list of variable to include inside the message
+     * @return string
+     */
     public function renderSubMessage($message, $variables = array()){
         // init : html
         $html = "";

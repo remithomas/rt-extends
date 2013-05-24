@@ -12,6 +12,9 @@
 
 namespace RtExtends\Useful\Location;
 
+/**
+ * Ziptastic class
+ */
 class Ziptastic{
     
     const ZIPTASTIC_V2 = "http://zip.elevenbasetwo.com/v2/";
@@ -21,6 +24,8 @@ class Ziptastic{
      * 
      * @example
      * $data = RtExtends\Useful\Location\Ziptastic::dataLocation("US", "33330");
+     * 
+     * @todo throw Error Ziptastic
      * 
      * @param string $country
      * @param string $zipcode

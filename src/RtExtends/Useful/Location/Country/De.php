@@ -1,12 +1,15 @@
 <?php
 
 /**
- *
+ * Germany data
  * @author Remi THOMAS 
  */
 
 namespace RtExtends\Useful\Location\Country;
 
+/**
+ * De class 
+ */
 class De{
     
     /**

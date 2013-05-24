@@ -1,7 +1,14 @@
 <?php
+/**
+ * Csrf element
+ * @author Remi THOMAS 
+ */
 
 namespace RtExtends\Snippets\Form\Element;
 
+/**
+ * Csrf form element class
+ */
 class Csrf{
     
     /**

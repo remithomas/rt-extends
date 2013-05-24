@@ -10,6 +10,9 @@
 
 namespace RtExtends\Useful\Data;
 
+/**
+ * Fake class 
+ */
 class Fake {
     
     /**
@@ -31,7 +34,7 @@ class Fake {
     static $femaleFirstName = array("Carmen","Patricia","Chin","Anne","Audrey","Kasha","Branda","Jonie","Trudy","Sabrina","Elane","Christine","Aurélie","Marie","Arie","Kathey","Léonie","Rolande","Frida","Marisa","Linda","Cornelia","Véronique","Jacqueline","Cristine","Birgit","Roslyn","Josefine","Lesli","Louisa","Melynda","Otelia","Bette","Lissette","Isabelle","Priscilla","Meredith","Aline","Melany","Letty","Carlotta","Laurette","Anneliese","Allyson","Janett","Lydia","Sandie","Stephaine","Michaele","Thi","Nakia","Sarah","Laura");
     
     /**
-     *
+     * List of loremIpsum paragraph
      * @return array 
      */
     public static function getArrayParagraphLoremIpsum(){
@@ -50,7 +53,7 @@ class Fake {
     }
 
     /**
-     *
+     * Get attributes from a list
      * @param array $attributes
      * @return string 
      */
@@ -136,7 +139,8 @@ class Fake {
     }
     
     /**
-     * @todo ... 
+     * Get fake email
+     * @todo create this function
      */
     public static function fakeEmail(){
         
@@ -191,7 +195,7 @@ class Fake {
     }
     
     /**
-     *
+     * Get a fake full name
      * @param bool|integer $random
      * @param bool|integer $randomFirstName
      * @param integer $sexe
@@ -248,21 +252,25 @@ class Fake {
     }
 
     /**
-     * @todo ... 
+     * Get fake address
+     * @todo create this function
      */
     public static function fakeAddress(){
         
     }
     
     /**
-     * @todo ... 
+     * Get fake array
+     * @todo create this function
      */
     public static function fakeArray(){
         
     }
     
     /**
-     * @todo ... 
+     * Get fake StdClass using a model
+     * @todo create this function
+     * @param StdClass $model 
      */
     public static function fakeStdClass($model){
         
