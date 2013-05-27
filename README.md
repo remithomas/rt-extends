@@ -174,14 +174,15 @@ object(stdClass)#748 (3) {
 */
 ```
 
-States of countries (US, FR are available)
+States of countries (DE,FR,US are available)
 ```php
 \RtExtends\Useful\Location\Country\Us::states();
 \RtExtends\Useful\Location\Country\Us::statesFIPS(); // FIPS codes
 \RtExtends\Useful\Location\Country\Fr::states();
+\RtExtends\Useful\Location\Country\De::states();
 ```
 
-Counties of countries (US, FR are available)
+Counties of countries (FR,US are available)
 ```php
 \RtExtends\Useful\Location\Country\Fr::counties();
 \RtExtends\Useful\Location\Country\Fr::countiesStructured(); // by states
