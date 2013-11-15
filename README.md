@@ -71,6 +71,25 @@ return array(
 
 # Examples
 ---------------------------------------
+## Db\Sql
+Sql class including DuplicateInsert.php
+
+```php
+$value = array(
+    'user_id' => 2,
+    'value' => 'myvalue'
+);
+
+$sql = new \RtExtends\Db\Sql($adapter, 'mytable');
+        
+$DuplicateInsert = $sql->duplicateInsert();
+$DuplicateInsert->duplicateColumns(array('primary1','primary2'));
+$DuplicateInsert->values($values);
+        
+$sqlString = $sql->getSqlStringForSqlObject($DuplicateInsert);
+$adapter->query($sqlString, Adapter::QUERY_MODE_EXECUTE);
+```
+
 ## Db\Sql\DuplicateInsert
 
 ```php
@@ -81,6 +100,7 @@ $value = array(
 );
             
 $DuplicateInsert = new RtExtends\Db\Sql\DuplicateInsert("user");
+$DuplicateInsert->duplicateColumns(array('primary1','primary2'));
 $DuplicateInsert->values($value);
 
 $statment = $this->dbAdapter->createStatement(); 
