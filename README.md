@@ -83,7 +83,6 @@ $value = array(
 $sql = new \RtExtends\Db\Sql($adapter, 'mytable');
         
 $DuplicateInsert = $sql->duplicateInsert();
-$DuplicateInsert->duplicateColumns(array('primary1','primary2'));
 $DuplicateInsert->values($values);
         
 $sqlString = $sql->getSqlStringForSqlObject($DuplicateInsert);
@@ -100,7 +99,6 @@ $value = array(
 );
             
 $DuplicateInsert = new RtExtends\Db\Sql\DuplicateInsert("user");
-$DuplicateInsert->duplicateColumns(array('primary1','primary2'));
 $DuplicateInsert->values($value);
 
 $statment = $this->dbAdapter->createStatement(); 
