@@ -36,4 +36,6 @@ class De{
             "TH" => "Thüringen",
         );
     }
+    
+    // https://de.wikipedia.org/wiki/Liste_der_Landkreise_in_Deutschland
 }
