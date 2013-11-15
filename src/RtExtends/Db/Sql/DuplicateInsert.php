@@ -22,12 +22,6 @@ use Zend\Db\Sql\Insert as ZendInsert;
 class DuplicateInsert extends ZendInsert{
     
     /**
-     * Duplicate columns
-     * @var array 
-     */
-    protected $duplicateColumns;
-    
-    /**
      * Constructor
      *
      * @param  null|string|TableIdentifier $table
@@ -47,7 +41,8 @@ class DuplicateInsert extends ZendInsert{
     public function prepareStatement(AdapterInterface $adapter, StatementContainerInterface $statementContainer)
     {
         parent::prepareStatement($adapter, $statementContainer);
-        $statementContainer->setSql($sql . "ON DUPLICATE KEY UPDATE ".implode(",", array_map(array($this, "mapValue"), $this->duplicateColumns)));
+        $sql = $statementContainer->getSql();
+        $statementContainer->setSql($sql . "ON DUPLICATE KEY UPDATE ".implode(",", array_map(array($this, "mapValue"), $this->columns)));
     }
 
     /**
@@ -58,7 +53,7 @@ class DuplicateInsert extends ZendInsert{
      */
     public function getSqlString(PlatformInterface $adapterPlatform = null)
     {
-        return parent::getSqlString($adapterPlatform)  . " ON DUPLICATE KEY UPDATE ".implode(",", array_map(array($this, "mapValue"), $this->duplicateColumns));
+        return parent::getSqlString($adapterPlatform)  . " ON DUPLICATE KEY UPDATE ".implode(",", array_map(array($this, "mapValue"), $this->columns));
     }
     
     /**
@@ -68,10 +63,5 @@ class DuplicateInsert extends ZendInsert{
      */
     private function mapValue($columns){
         return "`".$columns."`=VALUES(`".$columns."`)";
-    }
-    
-    public function duplicateColumns($columns = array()){
-        $this->duplicateColumns = $columns;
-        return $this;
     }
 }
