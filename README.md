@@ -9,6 +9,8 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 
 * **Sql** : Db\Sql\DuplicateInsert ON DUPLICATE KEY UPDATE option
 * **Validators** : Date is later, is Earlier
+* **Uri**
+    * **Thumbnail** : Get Thumbnail from URI
 * **Useful**
     * **Location** : List of countries, states list, zipcode search
     * **I18n** : continents list, languages list, Timezones list
@@ -159,6 +161,25 @@ public function getInputFilterSpecification()
         ),
     );
 }
+```
+
+## Uri\Thumb
+Get list of thumbnail of an URI
+```php
+$uri = "http://www.dailymotion.com/video/x9003r_pac-man-remi-gaillard_fun";
+$uri = "http://www.youtube.com/watch?v=1VVkIOxRcX0"; // youtube
+$thumbUri = new \RtExtends\Uri\Thumb();
+var_dump($thumbUri->getThumbs($uri));
+
+// limit the number of thumbnails
+var_dump($thumbUri->getThumbs($uri, 2));
+```
+
+Get one thumbnail of an URI
+```php
+$uri = "http://framework.zend.com/blog/"; 
+$thumbUri = new \RtExtends\Uri\Thumb();
+var_dump($thumbUri->getThumb($uri));
 ```
 
 ## Useful\I18n\Languages
