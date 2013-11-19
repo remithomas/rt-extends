@@ -318,6 +318,13 @@ $flashMessage->setTitle("bravo");
 $flashMessage->setMessages("Yes you did");
 
 $this->flashmessenger()->addSuccessMessage($flashMessage);
+
+// Error !
+$flashMessage = new FlashMessage();
+$flashMessage->setTitle("Ups");
+$flashMessage->setMessages("This is wrong");
+
+$this->flashmessenger()->addErrorMessage($flashMessage);
 ```
 With variable
 ```php
