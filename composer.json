@@ -16,7 +16,7 @@
     "version": "1.0.1",
     "require": {
         "php": ">=5.3.3",
-        "umpirsky/country-list": "dev-master",
+        "umpirsky/country-list": "*",
         "zendframework/zendframework": "2.*"
     },
     "autoload": {
