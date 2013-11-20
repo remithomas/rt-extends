@@ -18,6 +18,7 @@ return array(
     'RtExtends\Useful\Data\Fake'                    => __DIR__ . '/src/RtExtends/Useful/Data/Fake.php',
     'RtExtends\Useful\Php\String'                   => __DIR__ . '/src/RtExtends/Useful/Php/String.php',
     'RtExtends\View\Helper\ExtendedFlashMessenger'  => __DIR__ . '/src/RtExtends/View/Helper/ExtendedFlashMessenger.php',
+    'RtExtends\View\Helper\Date\CountDown'          => __DIR__ . '/src/RtExtends/View/Helper/Date/CountDown.php',
     'RtExtends\Entity\FlashMessage'                 => __DIR__ . '/src/RtExtends/Entity/FlashMessage.php',
     'RtExtends\Entity\FlashMessageSub'              => __DIR__ . '/src/RtExtends/Entity/FlashMessageSub.php',
     'RtExtends\Snippets\Form\Element\Crsf'          => __DIR__ . '/src/RtExtends/Snippets/Form/Element/Crsf.php',

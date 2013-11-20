@@ -62,6 +62,19 @@ class Module {
                     $messages->setFlashMessenger($flashmessenger);
  
                     return $messages;
+                },
+                'rtFlashMessenger' => function($sm) {
+                    $flashmessenger = $sm->getServiceLocator()
+                        ->get('ControllerPluginManager')
+                        ->get('flashmessenger');
+ 
+                    $messages = new \RtExtends\View\Helper\ExtendedFlashMessenger();
+                    $messages->setFlashMessenger($flashmessenger);
+ 
+                    return $messages;
+                },
+                'rtCountDown' => function($sm) {
+                    return new \RtExtends\View\Helper\Date\CountDown();
                 }
             ),
         );

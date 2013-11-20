@@ -18,6 +18,7 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
     * **File** : create Zip Archive, unzip archive, get Favicon
     * **PHP** : [sprintf](http://php.net/manual/en/function.sprintf.php) with dynamic variables
 * **View\Helper** : extended Flash messenger (sub-message and messages are translated)
+    * **Date** : CountDown
 * **Snippets** : create basic CSRF quickly
 
 ---------------------------------------
@@ -347,6 +348,18 @@ $flashMessage->setTitle("Sorry");
 $flashMessage->setMessages(array($subMessage,$subMessageSecond));
                 
 $this->flashmessenger()->addErrorMessage($flashMessage);
+```
+
+### Date view helper : countdown
+```php
+date_default_timezone_set('America/Montreal');
+$date = new \DateTime('NOW');
+
+// countdown result in ARRAY
+$countDown = $this->rtCountDown($$date->getTimestamp()+167890, $date->getTimestamp(), true);
+
+// string (is default param)
+$countDown = $this->rtCountDown($$date->getTimestamp()+167890, $date->getTimestamp(), false);
 ```
 
 ## Snippets
