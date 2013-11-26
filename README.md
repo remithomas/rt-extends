@@ -11,6 +11,8 @@ A list of ZF2 useful tools. To provide some utilities to generate list of langua
 * **Validators** : Date is later, is Earlier
 * **Uri**
     * **Thumbnail** : Get Thumbnail from URI
+    * **Type** : Get the type of the media
+    * **Meta** : Get metadata of the media
 * **Useful**
     * **Location** : List of countries, states list, zipcode search
     * **I18n** : continents list, languages list, Timezones list
@@ -164,7 +166,8 @@ public function getInputFilterSpecification()
 }
 ```
 
-## Uri\Thumb
+## Uri
+### Uri\Thumb
 Get list of thumbnail of an URI
 ```php
 $uri = "http://www.dailymotion.com/video/x9003r_pac-man-remi-gaillard_fun";
@@ -181,6 +184,27 @@ Get one thumbnail of an URI
 $uri = "http://framework.zend.com/blog/"; 
 $thumbUri = new \RtExtends\Uri\Thumb();
 var_dump($thumbUri->getThumb($uri));
+```
+
+### Uri\Type
+Get the type of the media
+```php
+$typeUri = new \RtExtends\Uri\Type();
+$typeUri->getType("http://www.youtube.com/watch?v=1VVkIOxRcX0"); // return youtube
+```
+
+### Uri\MetaData
+Get the meta of the media. All URI gets title and description
+```php
+$metadataUri = new \RtExtends\Uri\MetaData();
+$metadataUri->getMetaData("http://www.youtube.com/watch?v=1VVkIOxRcX0"); 
+/*
+return array(
+    'title' => 'media title',
+    'description' => 'media description',
+    // ...
+)
+*/
 ```
 
 ## Useful\I18n\Languages

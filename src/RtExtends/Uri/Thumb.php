@@ -28,19 +28,23 @@ class Thumb extends Uri{
                 case "www.youtube.com":
                     $queryArray = array();
                     parse_str($parseInfo->query, $queryArray);
-                    $return = array(
-                        "http://img.youtube.com/vi/" . $queryArray['v'] . "/0.jpg",
-                        "http://img.youtube.com/vi/" . $queryArray['v'] . "/1.jpg",
-                        "http://img.youtube.com/vi/" . $queryArray['v'] . "/2.jpg",
-                        "http://img.youtube.com/vi/" . $queryArray['v'] . "/3.jpg"
-                    );
+                    if(isset($queryArray['v'])){
+                        $return = array(
+                            "http://img.youtube.com/vi/" . $queryArray['v'] . "/0.jpg",
+                            "http://img.youtube.com/vi/" . $queryArray['v'] . "/1.jpg",
+                            "http://img.youtube.com/vi/" . $queryArray['v'] . "/2.jpg",
+                            "http://img.youtube.com/vi/" . $queryArray['v'] . "/3.jpg"
+                        );
+                    }
                     break;
 
                 // Dailymotion.com
                 case "www.dailymotion.com":
-                    $return = array(
-                        'http://www.dailymotion.com/thumbnail'. $parseInfo->path
-                    );
+                    if(strpos($parseInfo->path, "/video") !== false){
+                        $return = array(
+                            'http://www.dailymotion.com/thumbnail'. $parseInfo->path
+                        );
+                    }
                     break;
 
                 // Vimeo.com

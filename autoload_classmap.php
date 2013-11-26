@@ -8,6 +8,8 @@ return array(
     'RtExtends\Module'                              => __DIR__ . '/Module.php',
     'RtExtends\Useful\Languages'                    => __DIR__ . '/src/RtExtends/Useful/Languages.php',
     'RtExtends\Uri\Thumb'                           => __DIR__ . '/src/RtExtends/Uri/Thumb.php',
+    'RtExtends\Uri\Type'                            => __DIR__ . '/src/RtExtends/Uri/Type.php',
+    'RtExtends\Uri\MetaData'                        => __DIR__ . '/src/RtExtends/Uri/MetaData.php',
     'RtExtends\Useful\Countries'                    => __DIR__ . '/src/RtExtends/Useful/Countries.php',
     'RtExtends\Db\Sql\DuplicateInsert'              => __DIR__ . '/src/RtExtends/Db/Sql/DuplicateInsert.php',
     'RtExtends\Db\Sql'                              => __DIR__ . '/src/RtExtends/Db/Sql.php',
