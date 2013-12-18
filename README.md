@@ -380,10 +380,10 @@ date_default_timezone_set('America/Montreal');
 $date = new \DateTime('NOW');
 
 // countdown result in ARRAY
-$countDown = $this->rtCountDown($$date->getTimestamp()+167890, $date->getTimestamp(), true);
+$countDown = $this->rtCountDown($date->getTimestamp()+167890, $date->getTimestamp(), true);
 
 // string (is default param)
-$countDown = $this->rtCountDown($$date->getTimestamp()+167890, $date->getTimestamp(), false);
+$countDown = $this->rtCountDown($date->getTimestamp()+167890, $date->getTimestamp(), false);
 ```
 
 ## Snippets
@@ -426,7 +426,7 @@ echo "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js";
 # Thanks
 ---------------------------------------
 * To [Saša Stamenković](https://github.com/umpirsky) for [his great module](https://github.com/umpirsky/country-list).
-* To [Thomas Schultz](https://twitter.com/#!/daspecster) for [Ziptastic](http://daspecster.github.io/ziptastic/index.html) and don't foget to support this module!
+* To [Thomas Schultz](https://twitter.com/#!/daspecster) for [Ziptastic](http://daspecster.github.io/ziptastic/index.html) and don't forget to support this module!
 
 # Todo
 ---------------------------------------
