@@ -385,6 +385,7 @@ $countDown = $this->rtCountDown($date->getTimestamp()+167890, $date->getTimestam
 
 // string (is default param)
 $countDown = $this->rtCountDown($date->getTimestamp()+167890, $date->getTimestamp(), false);
+<<<<<<< HEAD
 ```
 
 ### BodyClasses view helper
@@ -399,6 +400,8 @@ $this->BodyClasses()->addClass(array("my-css-class", "blue-bck"));
 Inside your view script
 ```php
 ?><body class="<?php echo $this->rtBodyClasses()->render(); ?>">
+=======
+>>>>>>> FETCH_HEAD
 ```
 
 ## Snippets
