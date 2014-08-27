@@ -9,7 +9,9 @@
 namespace RtExtends;
 
 return array(
-    __NAMESPACE__ => array(
-        
-    )
+    'controller_plugins' => array(
+        'invokables' => array(
+            'BodyClasses' => 'RtExtends\Controller\Plugin\BodyClasses',
+        )
+    ),
 );

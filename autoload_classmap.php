@@ -30,4 +30,6 @@ return array(
     'RtExtends\Useful\Location\Country\Us'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/Us.php',
     'RtExtends\Useful\Location\Country\De'          => __DIR__ . '/src/RtExtends/Useful/Location/Country/De.php',
     'RtExtends\Useful\Location\Ziptastic'           => __DIR__ . '/src/RtExtends/Useful/Location/Ziptastic.php',
+    'RtExtends\View\Helper\BodyClasses'             => __DIR__ . '/src/RtExtends/View/Helper/BodyClasses.php',
+    'RtExtends\Controller\Plugin\BodyClasses'       => __DIR__ . '/src/RtExtends/Controller/Plugin/BodyClasses.php',
 );

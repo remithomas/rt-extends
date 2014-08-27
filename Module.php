@@ -75,6 +75,13 @@ class Module {
                 },
                 'rtCountDown' => function($sm) {
                     return new \RtExtends\View\Helper\Date\CountDown();
+                },
+                'rtBodyClasses' => function($sm) {
+                    $viewHelper = new \RtExtends\View\Helper\BodyClasses();
+                    $plugin = $sm->getServiceLocator()->get('ControllerPluginManager')->get("BodyClasses");
+                    //var_dump($plugin);die("test");
+                    $viewHelper->setBodyClassesPlugin($plugin);
+                    return $viewHelper;
                 }
             ),
         );
